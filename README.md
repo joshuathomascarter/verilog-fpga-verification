@@ -44,18 +44,18 @@ The FSM operates in one of four distinct states:
 
 The FSM's decisions are based on the following input signals:
 
-```verilog
-clk                      // Clock signal
-rst_n                   // Asynchronous active-low reset
-ml_predicted_action     // 2-bit: Machine learning suggested action
-internal_entropy_score  // 8-bit: Measures system unpredictability
-internal_hazard_flag    // Architectural hazard flag
-analog_lock_override    // External high-priority signal -> STATE_LOCK
-analog_flush_override   // External high-priority signal -> STATE_FLUSH
-classified_entropy_level// 2-bit: ENTROPY_LOW, MID, CRITICAL
-quantum_override_signal // Highest priority -> STATE_LOCK
-instr_type              // 3-bit: Instruction type (ALU, LOAD, BRANCH)
-Outputs
+- clk                      // Clock signal
+- rst_n                   // Asynchronous active-low reset
+- ml_predicted_action     // 2-bit: Machine learning suggested action
+- internal_entropy_score  // 8-bit: Measures system unpredictability
+- internal_hazard_flag    // Architectural hazard flag
+- analog_lock_override    // External high-priority signal -> STATE_LOCK
+- analog_flush_override   // External high-priority signal -> STATE_FLUSH
+- classified_entropy_level// 2-bit: ENTROPY_LOW, MID, CRITICAL
+- quantum_override_signal // Highest priority -> STATE_LOCK
+- instr_type              // 3-bit: Instruction type (ALU, LOAD, BRANCH)
+
+---
 
 These signals are available for external monitoring and logging:
 ## Outputs
